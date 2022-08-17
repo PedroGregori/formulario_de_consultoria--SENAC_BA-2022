@@ -57,10 +57,10 @@ class MainWindow(QMainWindow):
         estado = self.estado.currentText()
         descricao = self.descricao.text()
         
-        edit = Consulta(-1,nome, email, telefone, data, estado, descricao)
+        edit = Consulta(id,nome, email, telefone, data, estado, descricao)
         self.updateTable(edit)
         
-        ConsultaDAO.edit(edit,int(id))
+        ConsultaDAO.edit(edit)
         
         self.nome.clear()
         self.email.clear()

@@ -15,11 +15,11 @@ class ConsultaDAO():
         
         return id
         
-    def edit(c: Consulta,id: int):
+    def edit(c: Consulta):
         conn = connect()
         cursor = conn.cursor()
         SQL = "UPDATE consultoria SET nome=?,email=?,telefone=?,data=?,estado=?,descricao=? WHERE id=?"
-        dados = [c.nome, c.email, c.telefone, c.data, c.estado, c.descricao,id]
+        dados = [c.nome, c.email, c.telefone, c.data, c.estado, c.descricao,c.id]
         cursor.execute(SQL, dados)
         conn.commit()
         conn.close()
